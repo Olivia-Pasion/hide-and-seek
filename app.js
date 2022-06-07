@@ -127,10 +127,14 @@ shedButton.addEventListener('click', () => {
 function displayResults() {
 
     const winsDisplay = document.getElementById('wins-display');
+    winsDisplay.textContent = wins;
     const lossesDisplay = document.getElementById('losses-display');
+    lossesDisplay.textContent = loss;
     const totalDisplay = document.getElementById('total-display');
+    totalDisplay.textContent = total;
 
-
+    
+   
 }
 
 console.log(wins, loss, total);
