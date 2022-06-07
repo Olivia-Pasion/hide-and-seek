@@ -8,15 +8,36 @@ let wins = 0;
 let spot = '';
 let guessed = '';
 let timeout = 0;
+let loss = 0;
+
 
 function handleGuess(guess) {
     // *** Implement Missing Functionality ***
     // Generate a random spot based on spots array
+    guessed = true;
+    spot = getRandomItem(spots);
+
     // Use the score function to get a result for guess and actual spot
+
+
+    let guessOutcome = score(guess, spot);
+    
+      
+
     // (You also need to implement the score function)
+    
+    if (guessOutcome === 1) {
+
     // If the result is 1 (win), increase wins state
+
+        wins++;
+    } else {
+        loss++;}
     // Increase total state 
     // ***
+    total++;
+    console.log(wins, loss, total);
+    
 
     // Store the guess so we can apply special background
     guessed = guess;
@@ -62,6 +83,15 @@ function displayHidingSpots() {
     // matches for tree, shed, or boulder
     // ***
 
+    if (guessed === 'tree') {
+        treeButton.classList.add('guessed');
+    }
+    if (guessed === 'shed') {
+        shedButton.classList.add('guessed');
+    }
+    if (guessed === 'boulder') {
+        boulderButton.classList.add('guessed');
+    }
 
     // Clear the face and guessed classes after two seconds
     // store the timeout so we can clear if user makes
@@ -86,14 +116,28 @@ shedButton.addEventListener('click', () => {
 
 // *** Implement the Results Component! ***
 // 1. Reference needed DOM elements
+
+
+
 // 2. Implement the displayResults function that updates
 //    the component total, winds, and losses
 //    (derive losses from totals and wins)
 // ***
+
 function displayResults() {
 
+    const winsDisplay = document.getElementById('wins-display');
+    winsDisplay.textContent = wins;
+    const lossesDisplay = document.getElementById('losses-display');
+    lossesDisplay.textContent = loss;
+    const totalDisplay = document.getElementById('total-display');
+    totalDisplay.textContent = total;
+
+    
+   
 }
 
+console.log(wins, loss, total);
 
 // page load actions
 displayHidingSpots();

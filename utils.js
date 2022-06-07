@@ -9,4 +9,11 @@ export function score(guess, spot) {
     // *** Implement score function ***
     // See test/tests.js for tests you need to 
     // make pass!
+    const guessed = guess;
+    if (guessed === spot) {
+        return 1;
+    }
+    return 0;
+
 }
+
