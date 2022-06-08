@@ -36,7 +36,7 @@ function handleGuess(guess) {
     // Increase total state 
     // ***
     total++;
-    console.log(wins, loss, total);
+
     
 
     // Store the guess so we can apply special background
@@ -137,7 +137,6 @@ function displayResults() {
    
 }
 
-console.log(wins, loss, total);
 
 // page load actions
 displayHidingSpots();
